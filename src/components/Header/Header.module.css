@@ -1,0 +1,41 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(purple,rgb(243, 42, 172));
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+}
+.btn{
+    display: flex;
+}
+
+.iconImg{
+    margin: 0 0 0 16px;
+    width: 60px;
+}
+.logo{
+    display: flex;
+   
+}
+
+.text{
+    color: white;
+    font-size: 26px;
+    margin-top: 6px;
+    font-weight: 600;
+
+}
+.contactBtn{
+    margin: 10px 30px;
+    padding: 10px;
+    border:none;
+    border-radius: 20px;
+    color: white;
+    background:linear-gradient(pink,purple);
+    font-size: 14px;
+}
+
+.contactBtn:hover{
+   transform: scale(1.05);
+}

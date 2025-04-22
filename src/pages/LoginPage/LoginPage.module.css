@@ -1,0 +1,49 @@
+.container {
+  background: linear-gradient(135deg, rgb(255, 0, 128), rgb(128, 0, 255));
+  padding: 40px;
+  max-width: 400px;
+  margin: 50px auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgb(128, 0, 255);
+  color: white;
+  text-align: center;
+}
+
+.formField {
+  display: block;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(50, 0, 80);
+  box-shadow: 0 0 10px rgb(255, 0, 128);
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgb(255, 0, 128);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgb(255, 0, 128);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: rgb(128, 0, 255);
+  transform: scale(1.03);
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 5px;
+}
