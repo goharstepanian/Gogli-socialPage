@@ -56,7 +56,9 @@ const Status =memo(
       </div>
     );
   },
-  (prevProps, nextProps) => prevProps.id === nextProps.id
+  (prevProps, nextProps) => {
+        JSON.stringify(prevProps) === JSON.stringify(nextProps)
+  }
 ); 
 
 export default Status;
