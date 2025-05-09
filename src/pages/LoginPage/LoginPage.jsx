@@ -1,25 +1,26 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { memo, useCallback } from "react";
+import { useDispatch } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { setLoginThunk } from "../../store/reducers/authReducer";
 import validation from "../validation";
 import { NavLink } from "react-router-dom";
-import styles from "./LoginPage.module.css"
+import styles from "./LoginPage.module.css";
 
-const LoginPage = () => {
+const LoginPage = memo(() => {
   const dispatch = useDispatch();
 
-  const login = ({ email, password }) => {
-    dispatch(setLoginThunk(email, password));
-  };
-  
- 
+  const login = useCallback(
+    ({ email, password }) => {
+      dispatch(setLoginThunk(email, password));
+    },
+    [dispatch] 
+  );
 
   return (
     <div className={styles.container}>
       <Formik
         initialValues={{ email: "", password: "" }}
-        onSubmit={(value) => login(value)}
+        onSubmit={login}
         validationSchema={validation}
       >
         <Form>
@@ -30,6 +31,7 @@ const LoginPage = () => {
             className={styles.formField}
           />
           <ErrorMessage name="email" component="div" className={styles.error} />
+
           <Field
             type="password"
             name="password"
@@ -41,14 +43,20 @@ const LoginPage = () => {
             component="div"
             className={styles.error}
           />
-          <button className={styles.button}>Login</button>
+
+          <button type="submit" className={styles.button}>
+            Login
+          </button>
+
           <NavLink to="/users">
-            <button className={styles.button}>Log in without an account</button>
+            <button type="button" className={styles.button}>
+              Log in without an account
+            </button>
           </NavLink>
         </Form>
       </Formik>
     </div>
   );
-};
+});
 
 export default LoginPage;
